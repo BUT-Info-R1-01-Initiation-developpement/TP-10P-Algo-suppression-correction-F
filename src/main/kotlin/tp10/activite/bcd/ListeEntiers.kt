@@ -4,11 +4,21 @@ package tp10.activite.bcd
  * Classe représentant des Listes d'entiers (tableaux dynamiques d'entiers)
  */
 // Quelles sont les 2 méthodes qui ont été rajoutées à la classe ListeEntiers ?
-// ...
+// isEmpty() et contenuAsString()
 // Sont-elles testées dans une des classes de test ? Justifie ta réponse.
-// ...
+//
+// isEmpty() est testée dans toutes les méthodes de tests pour vérifier
+// qu'une liste vide retourne bien true quand on invoque isEmpty(), et
+// vérifier qu'une liste non vide retourne bien false quand on invoque isEmpty().
+//
+// contenuAsString() est explicitement testée dans les méthodes
+// `test la représentation en chaine de caractère liste non vide`()
+// `test la représentation en chaine de caractère liste vide`()
+// de la classe ListeEntiersTests
+//
 // Quelle est la complexité de chacune de ces méthodes ?
-// ...
+// isEmpty() -> O(1)
+// contenuAsString() -> O(n)
 class ListeEntiers(tabEntiers: Array<Int>) {
 
     private val capaciteInitiale = 100
