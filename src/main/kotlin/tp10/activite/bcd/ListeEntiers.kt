@@ -183,6 +183,49 @@ class ListeEntiers(tabEntiers: Array<Int>) {
     }
 
     /**
+     * Supprime la première occurence trouvée de l'élément donné
+     * <ul>
+     *     <li> Complexité meilleur cas : O(n) car on doit dans tous les cas parcourir tout le tableau
+     *     <li> Complexité pire cas : O(n) car on doit dans tous les cas parcourir tout le tableau
+     * </ul>
+     *
+     * @param element l'indice de l'élément à supprimer
+     *
+     */
+    fun supprimeV0(element: Int) {
+        var i = 0
+        while (i < this.taille && this.tableauEntiers[i] != element)  {
+            i++
+        }
+        if (i<this.taille)  {
+            taille--
+        }
+        for (j in i..< this.taille) {
+            this.tableauEntiers[j] = this.tableauEntiers[j + 1]
+        }
+    }
+
+    /**
+     * Supprime la première occurence trouvée de l'élément donné
+     * <ul>
+     *     <li> Complexité meilleur cas : O(n) car on doit dans tous les cas parcourir tout le tableau
+     *     <li> Complexité pire cas : O(n) car on doit dans tous les cas parcourir tout le tableau
+     * </ul>
+     *
+     * @param element l'indice de l'élément à supprimer
+     *
+     */
+    fun supprime(element: Int) {
+        val i = this.chercheAvecApprocheLineaire(element)
+        if (i != -1) {
+            taille--
+            for (j in i..<taille) {
+                this.tableauEntiers[j] = this.tableauEntiers[j+1]
+            }
+        }
+    }
+
+    /**
      * Vide la liste de tous ses éléments.
      * Complexité : O(1) ! Yippeeehh
      */
